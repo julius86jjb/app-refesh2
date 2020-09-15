@@ -41,7 +41,7 @@ export class HomePage {
     console.log('requestPushPermission result: ', this.hasPermission);
 
     this.token = await this.fcm.getToken();
-    console.log('getToken result: ', this.token);
+    console.log( this.token);
 
     this.pushPayload = await this.fcm.getInitialPushPayload();
     console.log('getInitialPushPayload result: ', this.pushPayload);
