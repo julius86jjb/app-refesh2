@@ -8,7 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FCM} from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
+import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import {FCM} from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
     FCM,
     StatusBar,
     SplashScreen,
+    InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

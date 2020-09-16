@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
 import { INotificationPayload } from 'cordova-plugin-fcm-with-dependecy-updated';
 import { Platform } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,7 @@ export class HomePage {
   public token: string;
   public pushPayload: INotificationPayload;
 
-  constructor(private platform: Platform, private fcm: FCM) {
+  constructor(private platform: Platform, private fcm: FCM, public iab: InAppBrowser) {
     this.setupFCM();
   }
   private async setupFCM() {
@@ -49,5 +51,10 @@ export class HomePage {
 
   public get pushPayloadString() {
     return JSON.stringify(this.pushPayload, null, 4);
+  }
+
+
+  public abrirEnlace() {
+    const browser = this.iab.create('https://escuela.powerexplosive.com/membership-area1593582164571', '_self', {location: 'no'});
   }
 }
