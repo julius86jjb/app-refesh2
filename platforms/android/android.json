@@ -69,7 +69,8 @@
               "xml": "<meta-data android:name=\"com.google.firebase.messaging.default_notification_icon\" android:resource=\"@mipmap/ic_launcher\" />",
               "count": 1
             }
-          ]
+          ],
+          "/manifest": []
         }
       },
       "config.xml": {
