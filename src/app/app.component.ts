@@ -22,8 +22,13 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // let status bar overlay webview
+    this.statusBar.overlaysWebView(true);
+
+    // set status bar to white
+    this.statusBar.backgroundColorByHexString('#525252');
+      // this.statusBar.styleDefault();
+    this.splashScreen.hide();
       // this.pushOS.configuracionInicial();
     });
   }
